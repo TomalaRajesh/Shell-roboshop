@@ -1,7 +1,7 @@
 #!/bin/bash
 
 AMI_ID="ami-09c813fb71547fc4f"
-SG_ID="sg-sg-00f85c25da2a97507" #Security group ID in instance details
+SG_ID="sg-00f85c25da2a97507" #Security group ID in instance details
 INSTANCES=("mongodb" "reds" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "frontend")
 ZONE_ID="Z061750233024S3H4FMKY" # Route53 --> Hosted zone ID
 DOMAIN_NAME="rajdevops.fun"
