@@ -8,10 +8,10 @@ DOMAIN_NAME="rajdevops.fun"
 
 for instance in ${INSTANCES[@]}
 do
-    INSTANCES_ID=$(aws ec2 run-instances --image-id ami-09c813fb71547fc4f --instance-type t3.micro --security-group-ids sg-01bc7ebe005fb1cb2 --tag-specifications "ResourceType=instance,Tags=[{Key=Name, Value=test}]" --query "Instances[0].PrivateIpAddress" --output text)
+    INSTANCES_ID=$(aws ec2 run-instances --image-id ami-09c813fb71547fc4f --instance-type t3.micro --security-group-ids sg-00f85c25da2a97507 --tag-specifications "ResourceType=instance,Tags=[{Key=Name, Value=test}]" --query "Instances[0].PrivateIpAddress" --output text)
     if  [ $instance != "frontend" ]
     then
-        IP=$(aws ec2 describe-instances --instance-ids i-0abcdef123456789 --query "Reservations[0].Instances[0].PrivateIpAddress" --output text)
+        IP=$(aws ec2 describe-instances --instance-ids i-031f16140bdbe778b --query "Reservations[0].Instances[0].PrivateIpAddress" --output text)
     else
         IP=$(aws ec2 describe-instance --instance-ids $INSTANCES_ID --query "Reservations[0].Instances[0].PublicIPAddress" --output text)
     fi
