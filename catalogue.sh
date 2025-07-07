@@ -71,3 +71,4 @@ dnf install mongodb-mongosh -y &>>$LOG_FILE
 VALIDATE $? "Installing MongoDB clinet"
 
 mongosh --host mongodb.rajdevops.fun </app/db/master-data.js &>>$LOG_FILE
+VALIDATE $? "Loading data into MongoDB"
